@@ -2,11 +2,16 @@
   "name": "office-app-express",
   "version": "1.0.0",
   "description": "This is Office App W//MongoDB",
-  "main": "server.js",
-  "scripts": {
+  "main": "SERVER/server.js",
+  "scripts":  {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon node ./SERVER/server.js"
+    "start-dev": "nodemon node ./SERVER/server.js",
+    "start": "node ./SERVER/server.js",
+    "setup": "npm install && npm run start",
+    "start-some":"////"
+
   },
+
   "author": "Oshri-el Tzagay",
   "license": "ISC",
   "dependencies": {
