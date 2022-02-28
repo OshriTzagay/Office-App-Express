@@ -1,3 +1,13 @@
-GET  http://localhost:8000/workers
+# GET  http://localhost:8000/workers/
 
+# ###
+
+POST http://localhost:8000/workers/
+
+Content-Type: application/json 
+
+{
+    "firstName":"BazazaoB",
+    "lastName":"BazziB"
+}
 ###
