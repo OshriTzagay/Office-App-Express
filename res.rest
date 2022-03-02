@@ -1,13 +1,15 @@
-# GET  http://localhost:8000/workers/
+GET  https://my-office-mern-app.herokuapp.com/workers
 
 # ###
 
-POST http://localhost:8000/workers/
+# POST http://localhost:8000/workers/
 
-Content-Type: application/json 
+# Content-Type: application/json 
 
-{
-    "firstName":"BazazaoB",
-    "lastName":"BazziB"
-}
+# {
+#     "firstName":"BazazaoB",
+#     "lastName":"BazziB"
+# }
 ###
+
+POST https://my-office-mern-app.herokuapp.com/workers
