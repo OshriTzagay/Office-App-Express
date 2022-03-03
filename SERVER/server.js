@@ -7,6 +7,7 @@ dotenv.config();
 //!Imports--->
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 require("./DB/index");
 const workerRouter = require("./routes/worker-route");
 const userRouter = require("./routes/user-route");
@@ -34,9 +35,19 @@ app.get("/", (req, res) => {
   res.send("WELLCOME TO THE OFFICE.");
 });
 app.use(passport.initialize());
-app.use("/workers", passport.authenticate('jwt',{session : false}),workerRouter);
+app.use(
+  "/workers",
+  passport.authenticate("jwt", { session: false }),
+  workerRouter
+);
 app.use("/users", userRouter);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  });
+}
 ///!_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 ///!_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 ///!_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
