@@ -7,11 +7,11 @@ dotenv.config();
 //!Imports--->
 const express = require("express");
 const cors = require("cors");
-require("../DB/index");
-const workerRouter = require("../routes/worker-route");
-const userRouter = require("../routes/user-route");
+require("./DB/index");
+const workerRouter = require("./routes/worker-route");
+const userRouter = require("./routes/user-route");
 const passport = require("passport");
-require("../config/passport")(passport);
+require("./config/passport")(passport);
 
 const port = process.env.PORT || 8000;
 

@@ -1,4 +1,4 @@
-const Workers = require("../models/worker-model");
+const Workers = require('../models/worker-model');
 
 let getWorkers = async (req, res) => {
   await Workers.find()
