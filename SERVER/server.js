@@ -31,9 +31,9 @@ app.listen(port, () => {
 ////--------------------------------------
 ///!SERVER HTTPs & Routes-->
 
-app.get("/", (req, res) => {
-  res.send("WELLCOME TO THE OFFICE.");
-});
+// app.get("/", (req, res) => {
+//   res.send("WELLCOME TO THE OFFICE.");
+// });
 app.use(passport.initialize());
 app.use(
   "/workers",
