@@ -1,6 +1,6 @@
 const BASIC_API =
   process.env.NODE_ENV === "production"
-    ? "https://my-office-mern-app.herokuapp.com/"
+    ? "https://ivolunteer-app.herokuapp.com/"
     : "http://localhost:8000/";
 
 export const getAllWorkers = () => {
